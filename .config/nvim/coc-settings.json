@@ -1,0 +1,26 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["typescript", "python"],
+
+    "python.analysis.typeCheckingMode": "off",
+    "pyright.organizeimports.provider" : "isort",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "./.venv/bin/black",
+    "exclude": [ ".venv" ],
+    "venvPath": "./.venv/",
+
+    "reportTypeshedErrors": false,
+    "reportMissingImports": true,
+    "reportMissingTypeStubs": false,
+
+    "executionEnvironments": [
+        {
+          "root": "./",
+          "venv": "./"
+        }
+    ],
+
+    "prettier.tslintIntegration": true,
+    "prettier.semi": false,
+    "prettier.bracketSpacing": true,
+    "prettier.printWidth": 88
+}
