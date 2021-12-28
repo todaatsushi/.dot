@@ -1,0 +1,34 @@
+# Vim
+alias vrcc="vim ~/.vimrc"
+alias vrs="vim ~/.vim"
+
+# Neovim
+alias nv="nvim"
+alias nvcon="cd ~/.config/nvim/ && nvim"
+
+# Tmux
+alias startup="~/.config/tmux/startup.sh"
+alias tlist="tmux list-sessions"
+
+# Neovim
+alias nv="nvim"
+alias nvcon="cd ~/.config/nvim/ && nvim"
+
+# System
+alias edit_aliases="nvim ~/.zsh_aliases; source ~/.zsh_aliases"
+alias aliases="cat ~/.zsh_aliases"
+alias c="clear"
+alias rc="vim ~/.zshrc; source ~/.zshrc"
+
+# Workspace
+alias workspace="cd ~/Workspace/; cd "
+alias lsw="ls ~/Workspace"
+
+# Youtube-dl
+alias ytdl="sudo youtube-dl -x --audio-format 'mp3' "
+
+
+# rust tutorials
+alias rl="rustlings"
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
