@@ -1,0 +1,134 @@
+#!/bin/bash
+
+# Feature branches
+branch_off () {
+    CURRENT=$(git symbolic-ref --short HEAD)
+
+    if [ -z "$1" ]; then
+        echo "Please provide a branch off name."
+    else
+        NEW_BRANCH="${CURRENT}__${1}"
+        git checkout -b "$NEW_BRANCH"
+    fi
+}
+
+back_to_feature () {
+    CURRENT_SUB_FEATURE=$(git symbolic-ref --short HEAD)
+    CURRENT_FEATURE=$( echo $CURRENT_SUB_FEATURE | awk '{split($0,a,"__"); print a[1]}' )
+    DELETE=false
+    TO_STAGING=false
+
+    for arg in "$@"
+    do
+        if [ $arg = "-s" ]; then
+            TO_STAGING=true
+        fi
+
+        if [ $arg = "-d" ]; then
+            DELETE=true
+        fi
+    done
+
+    if [ $TO_STAGING = true ]; then
+        echo "Checking out to main"
+        git checkout main
+    else
+        git checkout $CURRENT_FEATURE
+    fi
+
+    if [ $DELETE = true ]; then
+        echo "Deleting $CURRENT_SUB_FEATURE"
+        git branch -D $CURRENT_SUB_FEATURE
+    fi
+}
+
+feature_rebase() {
+    CURRENT_SUB_FEATURE=$(git symbolic-ref --short HEAD)
+    CURRENT_FEATURE=$( echo $CURRENT_SUB_FEATURE | awk '{split($0,a,"__"); print a[1]}' )
+
+    git checkout "$CURRENT_FEATURE" && git pull
+    git checkout "$CURRENT_SUB_FEATURE"
+    git rebase -i "$CURRENT_FEATURE"
+}
+
+# Utils
+freshen_branch() {
+    CURRENT=$(git symbolic-ref --short HEAD)
+	git checkout main && git pull && git fetch --all
+
+    if [ -z "$1" ]; then
+        git checkout "$CURRENT"
+    else
+        git checkout "$1"
+    fi
+
+	git rebase -i main
+}
+
+# Shortcuts
+ch_upstream() {
+	git checkout origin/"$1"
+	git checkout -b "$1"
+	git branch --set-upstream-to=origin/"$1" "$1"
+}
+
+set_upstream() {
+	git branch --set-upstream-to=origin/"$1" "$1"
+}
+
+rmb() {
+    CURRENT=$(git symbolic-ref --short HEAD)
+    if [ -z "$1" ]; then
+        echo "Removing branch " "$CURRENT"
+    else
+        CURRENT="$1"
+    fi
+    echo "Removing branch " "$CURRENT"
+
+	git checkout main && git pull && git fetch --all
+	git branch -D "$CURRENT"
+}
+
+wip_commit() {
+	git add .
+	git commit -n -m 'WIP: "$1"'
+}
+
+fx() {
+   if [ -z "$1" ]; then
+       if [ -z "$2" ]; then
+           git commit --amend --no-edit
+       else
+           git commit --amend -m "$2"
+       fi
+   else
+       if [ -z "$2" ]; then
+           git commit --fixup "$1" --no-edit
+       else
+           git commit --fixup "$1" -m "$1"
+       fi
+   fi
+}
+
+# Aliases
+alias g='git'
+alias b='git branch'
+alias sta='git stash'
+alias ch='git checkout'
+alias chb='git checkout origin/'
+alias cht='git checkout --track origin/'
+alias chu='git checkout main && git pull && git fetch --all  && git checkout -b'
+alias cm="git commit"
+alias fp='git push -f'
+alias s='git status'
+alias D='git branch -D'
+alias log='git log --oneline'
+alias rb='git rebase -i'
+alias rbs='git pull --rebase origin main'
+alias rbc='git rebase --continue'
+alias update='git checkout main && git pull && git fetch --all  && git branch'
+alias ap='git add -p'
+alias unstage='git reset HEAD .'
+alias uncommit='git reset --soft HEAD~'
+alias undo_wip='git reset --soft HEAD~1 && git reset HEAD .'
+
