@@ -8,7 +8,7 @@ for file in ~/.zsh_*; do
     esac
 done
 
-for file in ~/.dotfiles/.bash_*; do
+for file in ~/.bash_*; do
     case $file in 
         (*) source $file;;
     esac
