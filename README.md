@@ -7,3 +7,11 @@ config config --local status.showUntrackedFiles no
 ```
 
 See config for instructions
+
+Current settings:
+
+```
+Neovim
+tmux
+starship
+```
