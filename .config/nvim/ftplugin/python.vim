@@ -21,6 +21,7 @@ cnoremap %v <C-R>=VirtualEnvSitePackagesFolder()<CR>
 
 " Formatting
 " let b:ale_fixers = ['black', 'isort']
+let b:ale_fixers = ['isort']
 let b:ale_fix_on_save = 1
 
 let g:ale_linters = {
