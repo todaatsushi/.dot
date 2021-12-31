@@ -110,6 +110,14 @@ fx() {
    fi
 }
 
+plog () {
+    if [ -z "$1" ]; then
+        git log --pretty=format:"%h%x09%an%x09%s"
+    else
+        git log --pretty=format:"%h%x09%an%x09%s" | grep "$1"
+    fi
+}
+
 # Aliases
 alias g='git'
 alias b='git branch'
