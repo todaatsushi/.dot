@@ -23,7 +23,7 @@ Plug 'prettier/vim-prettier'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'BurntSushi/ripgrep'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sharkdp/fd'
 
 Plug 'scrooloose/nerdtree'

@@ -57,3 +57,7 @@ nnoremap . .<c-g>u
 nnoremap ! !<c-g>u
 nnoremap ? ?<c-g>u
 nnoremap ; ;<c-g>u
+
+" reselect selection after shift
+vnoremap < <gv
+vnoremap > >gv
