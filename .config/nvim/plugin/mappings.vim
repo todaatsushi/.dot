@@ -36,7 +36,8 @@ vnoremap K :m '>-2<CR>gv=gv
 inoremap jk <C-c><cr>
 
 " Meta
-cnoremap <leader>sv source $MYVIMRC<CR>
+cnoremap %sv source $MYVIMRC<CR>
+cnoremap %wd expand('%:h')<CR>
 
 " Helpers
 nnoremap <leader>ii i<space><esc>
