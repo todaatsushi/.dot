@@ -62,3 +62,5 @@ nnoremap ; ;<c-g>u
 " reselect selection after shift
 vnoremap < <gv
 vnoremap > >gv
+
+vnoremap ; y:<C-r>"<C-b>
