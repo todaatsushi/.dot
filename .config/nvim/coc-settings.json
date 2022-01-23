@@ -1,5 +1,5 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["typescript", "python"],
+    "coc.preferences.formatOnSaveFiletypes": ["typescript", "python", "rust"],
 
     "python.analysis.typeCheckingMode": "off",
     "pyright.organizeimports.provider" : "isort",
