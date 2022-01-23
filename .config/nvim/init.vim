@@ -11,7 +11,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'ThePrimeagen/harpoon'
-
+Plug 'tpope/vim-surround'
 
 " git
 Plug 'tpope/vim-fugitive'
