@@ -34,10 +34,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/seoul256.vim'
-Plug 'AlessandroYorba/Alduin'
-Plug 'romainl/Apprentice'
 Plug 'cocopon/iceberg.vim'
-Plug 'nanotech/jellybeans.vim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
@@ -50,7 +47,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'jiangmiao/auto-pairs'
-Plug'vim-python/python-syntax'
+Plug 'vim-python/python-syntax'
 
 " JS
 Plug 'HerringtonDarkholme/yats.vim'
