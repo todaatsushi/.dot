@@ -38,6 +38,10 @@ Plug 'AlessandroYorba/Alduin'
 Plug 'romainl/Apprentice'
 Plug 'cocopon/iceberg.vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'rakr/vim-one'
 
 " Meta
 Plug 'vim-airline/vim-airline'
