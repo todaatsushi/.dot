@@ -53,8 +53,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Python specific
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jeetsukumaran/vim-pythonsense'
-Plug 'jiangmiao/auto-pairs'
-Plug'vim-python/python-syntax'
+Plug 'vim-python/python-syntax'
 
 " JS
 Plug 'HerringtonDarkholme/yats.vim'
