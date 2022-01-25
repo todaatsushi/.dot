@@ -6,7 +6,7 @@
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "./.venv/bin/black",
     "exclude": [ ".venv" ],
-    "venvPath": "./.venv",
+    "python.venvPath": "./.venv",
 
     "reportTypeshedErrors": false,
     "reportMissingImports": true,
