@@ -1,0 +1,20 @@
+#!/bin/bash
+
+nest_packages () {
+    PROJECT_PATH="."
+    NEW_PATH="$1"
+
+    mkdir -p "$PROJECT_PATH/$NEW_PATH"
+
+    for dir in ${STR//// } ; do 
+        PROJECT_PATH="$PROJECT_PATH/$dir"
+        touch "$PROJECT_PATH/__init__.py"
+    done
+
+    shift;
+
+    for file in "$@"; do
+        echo $file $PROJECT_PATH " created."
+        touch "PROJECT_PATH/$file"
+    done
+}
