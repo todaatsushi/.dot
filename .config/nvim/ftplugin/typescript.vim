@@ -10,7 +10,6 @@ set nu
 set noswapfile
 set nobackup
 set incsearch
-set termguicolors
 
 set tabstop=2
 set softtabstop=2
