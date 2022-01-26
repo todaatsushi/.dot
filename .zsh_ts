@@ -1,0 +1,14 @@
+ts_init () {
+    echo "Init node modules + package log"
+    npm init -y
+
+    echo "Install TypeScript"
+    npm i typescript
+
+    echo "Install compiler"
+    npx tsc --init --outDir compiled
+
+    echo "Install tesing stuff"
+    npm i --save-dev jest ts-jest @types/jest
+    npx ts-jest config:init
+}
