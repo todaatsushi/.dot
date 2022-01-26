@@ -35,6 +35,8 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/seoul256.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'jacoborus/tender.vim'
+Plug 'chriskempson/base16-vim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
