@@ -60,6 +60,9 @@ Plug 'pangloss/vim-javascript'
 " Ts
 Plug 'leafgarland/typescript-vim'
 
+" Rust 
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
