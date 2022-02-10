@@ -118,6 +118,64 @@ plog () {
     fi
 }
 
+new_wt() {
+    if [ -z "$1" ]; then
+        echo "No branch provided"
+        return
+    fi
+
+    cd ~/Workspace/web2
+    TO_CHECKOUT="$1"
+    BRANCH_NAME=""
+
+    EXISTS=$(git show-ref refs/heads/"$TO_CHECKOUT")
+    DIR_NAME="$(echo "$TO_CHECKOUT" | tr "/" "__")"
+
+    if ! [ -z "$EXISTS" ]; then
+        echo "Is upstream branch - checking out $TO_CHECKOUT in $DIR_NAME"
+
+        git worktree add "$DIR_NAME" "$TO_CHECKOUT"
+        cd "$DIR_NAME"
+    else
+        if [ "$DIR_NAME" = "atoda" ]; then
+            BRANCH_NAME="$1"
+            TO_CHECKOUT="$( cut -d '/' -f 2 <<< "$TO_CHECKOUT" )"
+        else
+            BRANCH_NAME="atoda/$TO_CHECKOUT"
+        fi
+        echo "Checking out new branch $BRANCH_NAME in $TO_CHECKOUT"
+
+        git worktree add "$TO_CHECKOUT" -b "$BRANCH_NAME"
+        cd "$TO_CHECKOUT"
+    fi
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install --upgrade pip
+    poetry install
+
+    cp ~/Workspace/web2/common/ngrok ./ngrok
+    cp ~/Workspace/web2/common/settings_local.py python/wolfproject/settings_local.py
+
+    npm i
+    export PATH=$(npm bin):$PATH
+
+    terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Running server"
+
+    python manage.py runserver
+}
+
+remove_wt() {
+    cd ~/Workspace/web2
+    deactivate
+
+    git worktree remove "$1"
+
+    if [ -z $(git branch | grep $1 ) ]; then
+        echo "May need cleanup, check git branch $1"
+    fi
+}
+
 # Aliases
 alias g='git'
 alias b='git branch'
@@ -125,18 +183,18 @@ alias sta='git stash'
 alias ch='git checkout'
 alias chb='git checkout origin/'
 alias cht='git checkout --track origin/'
-alias chu='git checkout main && git pull && git fetch --all  && git checkout -b'
+alias chu='git checkout staging && git pull && git fetch --all  && git checkout -b'
 alias cm="git commit"
 alias fp='git push -f'
 alias s='git status'
 alias D='git branch -D'
 alias log='git log --oneline'
 alias rb='git rebase -i'
-alias rbs='git pull --rebase origin main'
+alias rbs='git pull --rebase origin staging'
 alias rbc='git rebase --continue'
-alias update='git checkout main && git pull && git fetch --all  && git branch'
+alias update='git checkout staging && git pull && git fetch --all  && git branch'
 alias ap='git add -p'
 alias unstage='git reset HEAD .'
 alias uncommit='git reset --soft HEAD~'
 alias undo_wip='git reset --soft HEAD~1 && git reset HEAD .'
-
+alias fetch_origin="git fetch origin '*:*'"

@@ -23,3 +23,11 @@ nest_packages () {
         echo "$PROJECT_PATH/$file" "created."
     done
 }
+
+format() {
+    for file in "$@"; do
+        echo $file
+        isort $file
+        black $file
+    done
+}

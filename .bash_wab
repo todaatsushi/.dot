@@ -1,59 +1,33 @@
 #!/bin/bash
 
-new_wt() {
-    if [ -z "$1" ]; then
-        echo "No branch provided"
-        return
-    fi
+set_up_wolf() {
+	docker-compose down -v && docker system prune -a
 
-    cd ~/Workspace/web2
-    TO_CHECKOUT="$1"
-    BRANCH_NAME=""
-
-    EXISTS=$(git show-ref refs/heads/"$TO_CHECKOUT")
-    DIR_NAME="$(echo "$TO_CHECKOUT" | tr "/" "__")"
-
-    if ! [ -z "$EXISTS" ]; then
-        echo "Is upstream branch - checking out $TO_CHECKOUT in $DIR_NAME"
-
-        git worktree add "$DIR_NAME" "$TO_CHECKOUT"
-        cd "$DIR_NAME"
-    else
-        if [ "$DIR_NAME" = "atoda" ]; then
-            BRANCH_NAME="$1"
-            TO_CHECKOUT="$( cut -d '/' -f 2 <<< "$TO_CHECKOUT" )"
-        else
-            BRANCH_NAME="atoda/$TO_CHECKOUT"
-        fi
-        echo "Checking out new branch $BRANCH_NAME in $TO_CHECKOUT"
-
-        git worktree add "$TO_CHECKOUT" -b "$BRANCH_NAME"
-        cd "$TO_CHECKOUT"
-    fi
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip
-    poetry install
-
-    cp ~/Workspace/web2/common/ngrok ./ngrok
-    cp ~/Workspace/web2/common/settings_local.py python/wolfproject/settings_local.py
-
-    npm i
-    export PATH=$(npm bin):$PATH
-
-    terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Running server"
-
-    python manage.py runserver
+	docker-compose build
+	docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml build
+	docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up
 }
 
-remove_wt() {
-    cd ~/Workspace/web2
-    deactivate
+# Wab docker setup
+# Docker aliases
+# Run
+alias badger_up='docker compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up -d && docker attach website-wolf_app-1'
+alias badger_exp_up='docker compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up'
+alias badger_reset='docker compose down --remove-orphans && docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up -d && docker attach website-wolf_app-1'
+alias ddown='docker compose down --remove-orphans'
+alias attach='docker attach website-wolf_app-1'
+alias badger_startup='docker compose build && docker compose -f docker-compose.yml -f docker/local/docker-compose.override.yml build'
 
-    git worktree remove "$1"
+# Nuclear
+alias badger_nuke='docker-compose down -v && docker system prune -a'
 
-    if [ -z $(git branch | grep $1 ) ]; then
-        echo "May need cleanup, check git branch $1"
-    fi
-}
+# Image shell
+alias badger_local_image='docker-compose exec wolf_app bash'
+alias badger_shell='docker-compose exec wolf_app python manage.py shell_plus'
+alias badger_tests='docker-compose exec wolf_app python runtests.py'
+
+# Build
+alias badger_build='docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml build'
+
+# Runs image in the background and enters the image
+alias badger_init_load='docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up -d postgres wolf_app && docker-compose exec wolf_app bash'
