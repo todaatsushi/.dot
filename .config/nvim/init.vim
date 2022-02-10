@@ -28,6 +28,8 @@ Plug 'nvim-treesitter/playground'
 Plug 'sharkdp/fd'
 
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pechorin/any-jump.vim'
 
 " Colour schemes
