@@ -42,22 +42,18 @@ new_wt() {
     npm i
     export PATH=$(npm bin):$PATH
 
+    terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Running server"
+
     python manage.py runserver
 }
 
 remove_wt() {
-    if [ $(basename pwd) = "web2" ]; then
-        echo "Already in project root"
-        if [ -z "$2" ]; then
-            echo "Need branch name to clean properly"
-            return
-        fi
-    else
-        cd ~/Workspace/web2
-        BRANCH_NAME=$(git symbolic-ref --short HEAD)
-    fi
+    cd ~/Workspace/web2
+    deactivate
 
     git worktree remove "$1"
-    git branch -D "$BRANCH_NAME"
-    git fetch --all
+
+    if [ -z $(git branch | grep $1 ) ]; then
+        echo "May need cleanup, check git branch $1"
+    fi
 }
