@@ -149,11 +149,7 @@ new_wt() {
         cd "$TO_CHECKOUT"
     fi
 
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip
-    poetry install
-
+    poetry shell
     cp ~/Workspace/web2/common/ngrok ./ngrok
     cp ~/Workspace/web2/common/settings_local.py python/wolfproject/settings_local.py
 
@@ -198,3 +194,7 @@ alias unstage='git reset HEAD .'
 alias uncommit='git reset --soft HEAD~'
 alias undo_wip='git reset --soft HEAD~1 && git reset HEAD .'
 alias fetch_origin="git fetch origin '*:*'"
+
+# Tmux worktrees
+alias nwt="~/.config/tmux/new_wt.sh"
+alias rwt="remove_wt"
