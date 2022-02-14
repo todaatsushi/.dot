@@ -118,6 +118,28 @@ plog () {
     fi
 }
 
+change_wt() {
+    if [ -z "$1" ]; then
+        echo "No branch provided"
+        return
+    fi
+
+    TO_CHECKOUT="$1"
+    EXISTS=$(git show-ref refs/heads/"$TO_CHECKOUT")
+
+    if ! [ -z "$EXISTS" ]; then
+        cd "~/Workspace/web2/$TO_CHECKOUT"
+        deactivate
+        source .venv/bin/activate
+    else
+        if [ $(git show-ref refs/heads/"$TO_CHECKOUT") ]; then
+            echo "Branch $TO_CHECKOUT needs to be checked out"
+        else
+            echo "Branch $TO_CHECKOUT doesn't exist."
+        fi
+    fi
+}
+
 new_wt() {
     if [ -z "$1" ]; then
         echo "No branch provided"
@@ -198,3 +220,4 @@ alias fetch_origin="git fetch origin '*:*'"
 # Tmux worktrees
 alias nwt="~/.config/tmux/new_wt.sh"
 alias rwt="remove_wt"
+alias cwt="change_wt"
