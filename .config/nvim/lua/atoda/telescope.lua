@@ -35,55 +35,53 @@ require("telescope").setup({
 require("telescope").load_extension("fzy_native")
 
 local M = {}
+local current_dir = os.getenv("PWD")
 
 M.search_files_env = function()
-    -- require("telescope.builtin").find_files({ cwd  = "~/Workspace/website/,venv", search = vim.fn.input("Search env files: ") })
-    require("telescope.builtin").find_files({ cwd  = "~/Workspace/website/.venv" })
+    require("telescope.builtin").find_files({ cwd  = string.format("%s/.venv", current_dir), search = vim.fn.input("Search env files: ") })
 end
 
 M.search_string_env = function()
-    require("telescope.builtin").grep_string({ cwd = "~/Workspace/website/.venv", search = vim.fn.input("Search env string: ")})
+    require("telescope.builtin").grep_string({ cwd = string.format("%s/.venv", current_dir), search = vim.fn.input("Search env string: ")})
 end
 
 M.search_word_env = function()
-    require("telescope.builtin").grep_string({ cwd = "~/Workspace/website/.venv", search = vim.fn.expand("<cword>") })
+    require("telescope.builtin").grep_string({ cwd = string.format("%s/.venv", current_dir), search = vim.fn.expand("<cword>") })
 end
 
 
 M.search_string_python = function()
-    require("telescope.builtin").grep_string({ cwd  = "~/Workspace/website/python", search = vim.fn.input("Search python string: ") })
+    require("telescope.builtin").grep_string({ cwd  = string.format("%s/python", current_dir), search = vim.fn.input("Search python string: ") })
 end
 
 M.search_files_python = function()
-    -- require("telescope.builtin").find_files({ cwd  = "~/Workspace/website/python", search = vim.fn.input("Search python files: ") })
-    require("telescope.builtin").find_files({ cwd  = "~/Workspace/website/python" })
+    require("telescope.builtin").find_files({ cwd  = string.format("%s/python", current_dir), search = vim.fn.input("Search python files: ") })
 end
 
 M.search_live_python = function()
-    require("telescope.builtin").live_grep({ cwd  = "~/Workspace/website/python" })
+    require("telescope.builtin").live_grep({ cwd  = string.format("%s/python", current_dir) })
 end
 
 M.search_word_python = function()
-    require("telescope.builtin").grep_string({ cwd = "~/Workspace/website/python", search = vim.fn.expand("<cword>") })
+    require("telescope.builtin").grep_string({ cwd = string.format("%s/python", current_dir), search = vim.fn.expand("<cword>") })
 end
 
 
 
 M.search_string_templates = function()
-    require("telescope.builtin").grep_string({ cwd  = "~/Workspace/website/templates", search = vim.fn.input("Search templates string: ") })
+    require("telescope.builtin").grep_string({ cwd  = string.format("%s/templates", current_dir), search = vim.fn.input("Search templates string: ") })
 end
 
 M.search_files_templates = function()
-    -- require("telescope.builtin").find_files({ cwd  = "~/Workspace/website/templates", search = vim.fn.input("Search templates files: ") })
-    require("telescope.builtin").find_files({ cwd  = "~/Workspace/website/templates" })
+    require("telescope.builtin").find_files({ cwd  = string.format("%s/templates", current_dir), search = vim.fn.input("Search templates files: ") })
 end
 
 M.search_live_templates = function()
-    require("telescope.builtin").live_grep({ cwd  = "~/Workspace/website/templates" })
+    require("telescope.builtin").live_grep({ cwd  = string.format("%s/templates", current_dir) })
 end
 
 M.search_word_templates = function()
-    require("telescope.builtin").grep_string({ cwd = "~/Workspace/website/templates", search = vim.fn.expand("<cword>") })
+    require("telescope.builtin").grep_string({ cwd = string.format("%s/templates", current_dir), search = vim.fn.expand("<cword>") })
 end
 
 
