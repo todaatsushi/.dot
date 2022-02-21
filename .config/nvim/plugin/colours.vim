@@ -16,5 +16,6 @@ if (empty($TMUX))
 endif
 
 set termguicolors
+colorscheme tokyonight
 
 let base16colorspace=256
