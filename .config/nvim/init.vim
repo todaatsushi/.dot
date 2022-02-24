@@ -38,8 +38,9 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/seoul256.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
-Plug 'chriskempson/base16-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'vigoux/oak'
+Plug 'marko-cerovac/material.nvim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
