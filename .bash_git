@@ -193,13 +193,20 @@ new_wt() {
 }
 
 remove_wt() {
+    if [ -z "$1" ]; then
+        WORKTREE_NAME=$(basename $(pwd))
+    else
+        WORKTREE_NAME="$1"
+    fi
+
+    echo "Removing worktree " "$WORKTREE_NAME"
+
     cd ~/Workspace/web2
     deactivate
+    git worktree remove "$WORKTREE_NAME"
 
-    git worktree remove "$1"
-
-    if [ -z $(git branch | grep $1 ) ]; then
-        echo "May need cleanup, check git branch $1"
+    if [ -z $(git branch | grep $WORKTREE_NAME ) ]; then
+        echo "May need cleanup, check git branch $WORKTREE_NAME"
     fi
 }
 
