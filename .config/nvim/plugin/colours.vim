@@ -16,4 +16,3 @@ if (empty($TMUX))
 endif
 
 set termguicolors
-colorscheme tokyonight
