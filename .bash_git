@@ -159,9 +159,11 @@ new_wt() {
         git worktree add "$DIR_NAME" "$TO_CHECKOUT"
         cd "$DIR_NAME"
     else
-        if [ "$DIR_NAME" = "atoda" ]; then
+        if ! [ -z "$DIR_NAME" ]; then
             BRANCH_NAME="$1"
             TO_CHECKOUT="$( cut -d '/' -f 2 <<< "$TO_CHECKOUT" )"
+
+            echo "$DIR_NAME" "$BRANCH_NAME" "$TO_CHECKOUT"
         else
             BRANCH_NAME="atoda/$TO_CHECKOUT"
         fi
