@@ -185,13 +185,14 @@ new_wt() {
     npm i
     export PATH=$(npm bin):$PATH
 
-    terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Running server"
+    terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Ready to run server"
 
-    if [ -z "$2" ]; then
-        python manage.py runserver
-    else
-        python manage.py runserver "800$2"
-    fi
+    # TODO - add flag to run server
+    # if [ -z "$2" ]; then
+    #     python manage.py runserver
+    # else
+    #     python manage.py runserver "800$2"
+    # fi
 }
 
 remove_wt() {
