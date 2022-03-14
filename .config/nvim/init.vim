@@ -39,7 +39,6 @@ Plug 'junegunn/seoul256.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'vigoux/oak'
 Plug 'marko-cerovac/material.nvim'
 
 " Meta
