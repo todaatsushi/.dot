@@ -7,9 +7,7 @@ nmap <silent> gr <Plug>(coc-references)
 command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-nnoremap <leader>j CocAction('jumpDefinition')<CR>
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " inoremap <silent><expr> <TAB>
 "       \ pumvisible() ? "\<C-n>" :
