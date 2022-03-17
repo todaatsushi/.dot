@@ -41,7 +41,6 @@ cnoremap %wd expand('%:h')<CR>
 
 " Helpers
 nnoremap <leader>ii i<space><esc>
-nnoremap <leader>hl :Semshi enable<CR>
 
 " QOL improvements
 " Copies rest of line instead of whole line
