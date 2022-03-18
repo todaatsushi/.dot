@@ -52,8 +52,6 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'vim-python/python-syntax'
-
 " JS
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
