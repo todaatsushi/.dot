@@ -41,7 +41,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'aktersnurra/no-clown-fiesta.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'daschw/leaf.nvim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
@@ -54,7 +53,6 @@ Plug 'mrjones2014/legendary.nvim'
 " Python specific
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jeetsukumaran/vim-pythonsense'
-
 Plug 'vim-python/python-syntax'
 
 " JS
