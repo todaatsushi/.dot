@@ -46,6 +46,7 @@ Plug 'dense-analysis/ale'
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mrjones2014/legendary.nvim'
 
 " Python specific
 Plug 'Vimjas/vim-python-pep8-indent'
