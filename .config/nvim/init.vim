@@ -39,6 +39,9 @@ Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'marko-cerovac/material.nvim'
+Plug 'aktersnurra/no-clown-fiesta.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'daschw/leaf.nvim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
