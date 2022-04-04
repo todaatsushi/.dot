@@ -16,3 +16,5 @@ if (empty($TMUX))
 endif
 
 set termguicolors
+
+autocmd vimenter * hi Comment term=bold cterm=NONE ctermfg=Darkgrey ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
