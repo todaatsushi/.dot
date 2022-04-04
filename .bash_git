@@ -188,12 +188,13 @@ new_wt() {
     terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Ready to run server"
 
     # TODO - add flag to run server
-    # if [ -z "$2" ]; then
-    #     python manage.py runserver
-    # else
-    #     python manage.py runserver "800$2"
-    # fi
-}
+    if [ -z "$2" ]; then
+        python manage.py runserver
+    else
+        python manage.py runserver "800$2"
+    fi
+
+    }
 
 remove_wt() {
     if [ -z "$1" ]; then

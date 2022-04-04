@@ -4,7 +4,6 @@ if [ -z "$1" ]; then
     return
 fi
 
-
 new_branch="$1"
 session_name=$(tmux display-message -p "#S")
 clean_branch="$(echo "$new_branch" | tr "/" "__")"
