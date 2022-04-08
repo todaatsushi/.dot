@@ -55,7 +55,7 @@ M.search_string_python = function()
 end
 
 M.search_files_python = function()
-    require("telescope.builtin").find_files({ cwd  = string.format("%s/python", current_dir), search = vim.fn.input("Search python files: ") })
+    require("telescope.builtin").find_files({ cwd  = string.format("%s/python", current_dir)})
 end
 
 M.search_live_python = function()
