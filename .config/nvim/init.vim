@@ -47,9 +47,6 @@ Plug 'savq/melange'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 
-" Autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Python specific
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jeetsukumaran/vim-pythonsense'
