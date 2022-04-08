@@ -13,6 +13,8 @@ Plug 'tpope/vim-commentary'
 Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-surround'
 
+Plug 'neovim/nvim-lspconfig'
+
 " git
 Plug 'tpope/vim-fugitive'
 
