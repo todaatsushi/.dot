@@ -188,7 +188,6 @@ let b:undo_ftplugin = 'setlocal cinkeys<'
 let &cpo = s:keepcpo
 unlet s:keepcpo
 
-###############################################################################
 
 " Python comments
 autocmd FileType apache setlocal commentstring=#\ %s
