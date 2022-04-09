@@ -16,10 +16,10 @@ local custom_on_attach = function(client)
     vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {buffer=0})
 
     -- Diagnostic
-    vim.keymap.set("n", "<leader>df", vim.diagnostic.goto_next, {buffer=0})
-    vim.keymap.set("n", "<leader>db", vim.diagnostic.goto_prev, {buffer=0})
+    vim.keymap.set("n", "<leader>ef", vim.diagnostic.goto_next, {buffer=0})
+    vim.keymap.set("n", "<leader>eb", vim.diagnostic.goto_prev, {buffer=0})
     -- Probs doesn't belong here
-    vim.keymap.set("n", "<leader>dl", "<CMD>Telescope diagnostics<CR>", {buffer=0})
+    vim.keymap.set("n", "<leader>el", "<CMD>Telescope diagnostics<CR>", {buffer=0})
 end
 
 local lspconfig = require('lspconfig')
