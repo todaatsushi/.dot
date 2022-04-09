@@ -2,7 +2,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local custom_on_attach = function(client)
+    -- Help & refactoring
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
+    vim.keymap.set("n", "rr", vim.lsp.buf.rename, {buffer=0})
+
+    -- Jumping around
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
     vim.keymap.set("n", "gr", vim.lsp.buf.references, {buffer=0})
