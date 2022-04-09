@@ -1,3 +1,6 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 local custom_on_attach = function(client)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
@@ -5,9 +8,6 @@ local custom_on_attach = function(client)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, {buffer=0})
     vim.keymap.set("n", "rr", vim.lsp.buf.rename, {buffer=0})
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
