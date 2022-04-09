@@ -1,3 +1,4 @@
+-- Telescope
 require("atoda.telescope")
 
 P = function(v)
@@ -13,3 +14,6 @@ if pcall(require, 'plenary') then
     return require(name)
   end
 end
+
+-- LSP
+require("atoda.lsp")
