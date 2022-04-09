@@ -53,6 +53,7 @@ Plug 'savq/melange'
 " Meta
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
+Plug 'rhysd/vim-grammarous'
 
 " Python specific
 Plug 'Vimjas/vim-python-pep8-indent'
