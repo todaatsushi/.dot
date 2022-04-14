@@ -32,6 +32,12 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.tsserver.setup{
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities,
+  root_dir = function() return vim.loop.cwd() end
+}
+
 -- luasnip setup
 local luasnip = require 'luasnip'
 
