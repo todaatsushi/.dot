@@ -49,7 +49,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'aktersnurra/no-clown-fiesta.nvim'
 Plug 'savq/melange'
-Plug 'projekt0n/github-nvim-theme'
 
 " Meta
 Plug 'vim-airline/vim-airline'
