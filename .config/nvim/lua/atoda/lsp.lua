@@ -23,20 +23,16 @@ local custom_on_attach = function(client)
 end
 
 local lspconfig = require('lspconfig')
+
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'pyright', 'gopls'}
+local servers = {'pyright', 'gopls', 'tsserver'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = custom_on_attach,
     capabilities = capabilities,
+    root_dir = function() return vim.loop.cwd() end
   }
 end
-
-lspconfig.tsserver.setup{
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities,
-  root_dir = function() return vim.loop.cwd() end
-}
 
 -- luasnip setup
 local luasnip = require 'luasnip'
