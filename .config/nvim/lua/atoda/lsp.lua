@@ -13,7 +13,7 @@ local custom_on_attach = function(client)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
 
     -- Actions
-    vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {buffer=0})
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer=0})
 
     -- Diagnostic
     vim.keymap.set("n", "<leader>ef", vim.diagnostic.goto_next, {buffer=0})
