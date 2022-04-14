@@ -1,3 +1,5 @@
+TODO - Isn't robust to any workspace
+
 Shout out https://www.atlassian.com/git/tutorials/dotfiles
 
 ```
