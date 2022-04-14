@@ -26,3 +26,7 @@ set updatetime=50
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+
+let b:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint']}
+let b:ale_fix_on_save = 1
+let b:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
