@@ -1,7 +1,4 @@
 export PATH=/opt/homebrew/bin:$PATH
-# Go path settings
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 
 for file in ~/.zsh_*; do
     case $file in
@@ -20,3 +17,7 @@ for file in ~/.bash_*; do
         (*) source $file;;
     esac
 done
+
+# Go path settings
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
