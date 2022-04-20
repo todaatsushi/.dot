@@ -215,4 +215,4 @@ inoremap <leader>ipdb import ipdb; ipdb.set_trace()
 inoremap <leader>noqa # flake8: noqa<esc>o
 inoremap <leader>anno from __future__ import annotations<esc>o
 inoremap <leader>tych from typing import TYPE_CHECKING<esc>o
-inoremap <leader>tymo if TYPE_CHECKING:<esc>o
+inoremap <leader>tyim if TYPE_CHECKING:<esc>o
