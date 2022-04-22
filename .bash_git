@@ -209,7 +209,7 @@ remove_wt() {
 
     cd ~/Workspace/web2
     deactivate
-    git worktree remove "$WORKTREE_NAME"
+    git worktree remove "$WORKTREE_NAME" --force
 
     if [ -z $(git branch | grep $WORKTREE_NAME ) ]; then
         echo "May need cleanup, check git branch $WORKTREE_NAME"
