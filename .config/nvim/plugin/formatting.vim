@@ -3,7 +3,7 @@ let b:ale_fixers = {
       \   'javascript': ['prettier'],
       \   'typescript': ['prettier'],
       \   'typescriptreact': ['prettier'],
-      \   'go': ['gofmt']
+      \   'go': ['gofmt'],
       \   'html': ['prettier']
       \}
 
