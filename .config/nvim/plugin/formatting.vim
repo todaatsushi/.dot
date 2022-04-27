@@ -4,6 +4,7 @@ let b:ale_fixers = {
       \   'typescript': ['prettier'],
       \   'typescriptreact': ['prettier'],
       \   'go': ['gofmt']
+      \   'html': ['prettier']
       \}
 
 let g:ale_linters = {
