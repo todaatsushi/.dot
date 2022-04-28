@@ -78,3 +78,5 @@ filetype plugin on
 " Neovim config shortcut
 cnoremap %nv ~/.config/nvim/
 nnoremap <leader>SV :so %<CR>
+
+colorscheme blue
