@@ -47,8 +47,16 @@ Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'marko-cerovac/material.nvim'
-Plug 'aktersnurra/no-clown-fiesta.nvim'
 Plug 'savq/melange'
+Plug 'mhartington/oceanic-next'
+Plug 'sainnhe/everforest'
+Plug 'rose-pine/neovim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'kvrohit/substrata.nvim'
+Plug 'rebelot/kanagawa.nvim'
+Plug 'phha/zenburn.nvim'
+Plug 'kvrohit/rasmus.nvim'
+
 
 " Meta
 Plug 'vim-airline/vim-airline'
