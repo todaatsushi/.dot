@@ -81,6 +81,9 @@ Plug 'rust-lang/rust.vim'
 " HTML
 Plug 'mattn/emmet-vim'
 
+" Go
+Plug 'fatih/vim-go'
+
 call plug#end()
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
