@@ -12,6 +12,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-surround'
+Plug 'mrjones2014/legendary.nvim'
 
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
@@ -56,7 +57,6 @@ Plug 'kvrohit/substrata.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'phha/zenburn.nvim'
 Plug 'kvrohit/rasmus.nvim'
-
 
 " Meta
 Plug 'vim-airline/vim-airline'
