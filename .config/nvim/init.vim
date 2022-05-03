@@ -78,6 +78,9 @@ Plug 'leafgarland/typescript-vim'
 " Rust 
 Plug 'rust-lang/rust.vim'
 
+" HTML
+Plug 'mattn/emmet-vim'
+
 call plug#end()
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
