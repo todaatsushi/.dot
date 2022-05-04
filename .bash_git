@@ -141,6 +141,7 @@ change_wt() {
 }
 
 new_wt() {
+    git fetch --all
     if [ -z "$1" ]; then
         echo "No branch provided"
         return
@@ -181,6 +182,7 @@ new_wt() {
     pip install pyobjc-core==7.3 pyobjc-framework-Cocoa==7.3 pyobjc-framework-Quartz==7.3 ipdb colored-traceback
     pip install SnakeViz django-cprofile-middleware
     pip install pip install django-stubs
+    pre-commit install
 
     cp ~/Workspace/web2/common/ngrok ./ngrok
     cp ~/Workspace/web2/common/settings_local.py python/wolfproject/settings_local.py
