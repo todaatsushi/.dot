@@ -84,6 +84,10 @@ Plug 'mattn/emmet-vim'
 " Go
 Plug 'fatih/vim-go'
 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'preservim/vim-markdown'
+
 call plug#end()
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
