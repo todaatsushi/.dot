@@ -85,8 +85,8 @@ Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go'
 
 " Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'preservim/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 call plug#end()
 
