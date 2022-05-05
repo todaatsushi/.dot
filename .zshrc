@@ -21,3 +21,6 @@ done
 # Go path settings
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# Lua
+export PATH="$HOME/tools/lua-language-server/bin/:$PATH"
