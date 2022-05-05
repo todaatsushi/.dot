@@ -20,12 +20,14 @@ local custom_on_attach = function(client)
     vim.keymap.set("n", "<leader>eb", vim.diagnostic.goto_prev, {buffer=0})
     -- Probs doesn't belong here
     vim.keymap.set("n", "<leader>el", "<CMD>Telescope diagnostics<CR>", {buffer=0})
+
+    vim.keymap.set("n", "<leader>xx", vim.lsp.buf.code_action)
 end
 
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'pyright', 'gopls', 'tsserver'}
+local servers = {'pyright', 'gopls', 'tsserver', 'sumneko_lua'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = custom_on_attach,
