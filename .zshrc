@@ -24,3 +24,5 @@ export PATH=$PATH:$GOPATH/bin
 
 # Lua
 export PATH="$HOME/tools/lua-language-server/bin/:$PATH"
+
+alias luamake=/Users/atsushitoda/tools/lua-language-server/3rd/luamake/luamake
