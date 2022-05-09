@@ -31,8 +31,8 @@ nnoremap <leader>plin :PlugInstall<CR>
 "  Nerdtree
 "nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
-nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
 
 
 " Utils
