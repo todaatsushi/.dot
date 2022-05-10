@@ -38,7 +38,7 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 " Utils
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '>-2<CR>gv=gv
-inoremap jk <C-c><cr>
+inoremap lk <C-c><cr>
 
 " Meta
 cnoremap %sv source $MYVIMRC<CR>
