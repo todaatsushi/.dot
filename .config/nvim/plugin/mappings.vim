@@ -29,7 +29,7 @@ nnoremap <leader>plin :PlugInstall<CR>
 
 "  Navigation
 "  Nerdtree
-"nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
