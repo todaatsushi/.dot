@@ -12,7 +12,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-surround'
-Plug 'mrjones2014/legendary.nvim'
 
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
