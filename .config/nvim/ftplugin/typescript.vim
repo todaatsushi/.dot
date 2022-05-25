@@ -15,10 +15,10 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" set noshowmode
+set noshowmode
 set signcolumn=yes
 set isfname+=@-@
-" set ls=0
+set ls=0
 
 " Having longer updatetime (default is 2000 ms = 2 s) leads to noticeable
 " delays and poor user experience.
