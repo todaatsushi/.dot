@@ -28,6 +28,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'mfussenegger/nvim-dap-python'
+Plug 'leoluz/nvim-dap-go'
 
 " git
 Plug 'tpope/vim-fugitive'
