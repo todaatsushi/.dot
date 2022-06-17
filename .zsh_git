@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# Feature branches
+## Feature branches
 branch_off () {
     CURRENT=$(git symbolic-ref --short HEAD)
 

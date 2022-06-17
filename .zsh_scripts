@@ -1,5 +1,39 @@
+#!/bin/bash
+
 function tag_mp3 () {
     sudo id3v2 -a "$1" -A "$2" -t "$3"  "$4"
     id3v2 --list "$4"
 }
 
+
+set_up_wolf() {
+	docker-compose down -v && docker system prune -a
+
+	docker-compose build
+	docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml build
+	docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up
+}
+
+# Wab docker setup
+# Docker aliases
+# Run
+alias badger_up='docker compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up -d && docker attach website-wolf_app-1'
+alias badger_exp_up='docker compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up'
+alias badger_reset='docker compose down --remove-orphans && docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up -d && docker attach website-wolf_app-1'
+alias ddown='docker compose down --remove-orphans'
+alias attach='docker attach website-wolf_app-1'
+alias badger_startup='docker compose build && docker compose -f docker-compose.yml -f docker/local/docker-compose.override.yml build'
+
+# Nuclear
+alias badger_nuke='docker-compose down -v && docker system prune -a'
+
+# Image shell
+alias badger_local_image='docker-compose exec wolf_app bash'
+alias badger_shell='docker-compose exec wolf_app python manage.py shell_plus'
+alias badger_tests='docker-compose exec wolf_app python runtests.py'
+
+# Build
+alias badger_build='docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml build'
+
+# Runs image in the background and enters the image
+alias badger_init_load='docker-compose -f docker-compose.yml -f docker/local/docker-compose.override.yml up -d postgres wolf_app && docker-compose exec wolf_app bash'
