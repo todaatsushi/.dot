@@ -23,3 +23,39 @@ newproject() {
     mkdir -p $NEW_PROJECT_DIR
     cd $NEW_PROJECT_DIR
 }
+
+pinagrep() {
+    # TODO - Toggle git files
+
+    POSITIONAL_ARGS=()
+    # GIT_FILES=false
+
+    while [[ $# -gt 0 ]]; do
+      case $1 in
+        # -g|--git-files)
+        #   GIT_FILES=true
+        #   shift # past args
+        #   ;;
+
+        -t|--to-replace)
+          TO_REPLACE="$2"
+          shift # past argument
+          shift # past value
+          ;;
+
+        -w|--replace-with)
+          REPLACE_WITH="$2"
+          shift
+          shift
+          ;;
+
+        *)
+          POSITIONAL_ARGS+=("$1") # save positional arg
+          shift
+          ;;
+      esac
+    done
+
+    set -- "${POSITIONAL_ARGS[@]}"
+    git grep -lr "$TO_REPLACE" "$@"/ | xargs -I@ sed -i '' "s/$TO_REPLACE/$REPLACE_WITH/g" @
+}
