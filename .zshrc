@@ -3,7 +3,7 @@ export PATH=/opt/homebrew/bin:$PATH
 # Python
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 
-for file in ~/.zsh_*; do
+for file in ~/.zsh/.zsh_*; do
     case $file in
         (*history*);;
         (*sessions*);;
