@@ -8,7 +8,7 @@ for file in ~/.zsh_*; do
         (*history*);;
         (*sessions*);;
         (*profile*);;
-        (*) echo "$file"; source $file;;
+        (*) source $file;;
     esac
 done
 
