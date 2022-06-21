@@ -153,4 +153,3 @@ vim.keymap.set("n", "<leader>ds", "<CMD>lua require('dap').debug_selection()<CR>
 
 -- Go
 vim.keymap.set("n", "<leader>gt", ":lua require('dap-go').debug_test()<CR>")
-

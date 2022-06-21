@@ -28,8 +28,8 @@ back_to_feature () {
     done
 
     if [ $TO_STAGING = true ]; then
-        echo "Checking out to main"
-        git checkout main
+        echo "Checking out to $MAIN_BRANCH_NAME"
+        git checkout $MAIN_BRANCH_NAME
     else
         git checkout $CURRENT_FEATURE
     fi
