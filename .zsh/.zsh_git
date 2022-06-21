@@ -52,7 +52,7 @@ feature_rebase() {
 # Utils
 freshen_branch() {
     CURRENT=$(git symbolic-ref --short HEAD)
-	git checkout main && git pull && git fetch --all
+	git checkout  && git pull && git fetch --all
 
     if [ -z "$1" ]; then
         git checkout "$CURRENT"
@@ -60,7 +60,7 @@ freshen_branch() {
         git checkout "$1"
     fi
 
-	git rebase -i main
+	git rebase -i $MAIN_BRANCH_NAME
 }
 
 # Shortcuts
@@ -83,7 +83,7 @@ rmb() {
     fi
     echo "Removing branch " "$CURRENT"
 
-	git checkout main && git pull && git fetch --all
+	git checkout $MAIN_BRANCH_NAME && git pull && git fetch --all
 	git branch -D "$CURRENT"
 }
 
