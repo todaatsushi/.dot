@@ -18,7 +18,6 @@ fi
 
 terminal-notifier -title "Build for $target started." -message "Branch name: $new_branch"
 
-source ~/.bash_wab
 if [ -z std_port_used ]; then
     tmux send-keys -t "$target" "new_wt $new_branch" Enter
 else
