@@ -1,5 +1,11 @@
 #!/bin/bash
 
+function tag_mp3 () {
+    sudo id3v2 -a "$1" -A "$2" -t "$3"  "$4"
+    id3v2 --list "$4"
+}
+
+
 set_up_wolf() {
 	docker-compose down -v && docker system prune -a
 

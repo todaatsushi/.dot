@@ -32,3 +32,9 @@ alias ytdl="sudo youtube-dl -x --audio-format 'mp3' "
 alias rl="rustlings"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Brew
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+
+# Lua
+alias luamake=/Users/atsushitoda/tools/lua-language-server/3rd/luamake/luamake

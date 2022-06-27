@@ -1,6 +1,4 @@
-export PATH=/opt/homebrew/bin:$PATH
-
-for file in ~/.zsh_*; do
+for file in ~/.zsh/.zsh_*; do
     case $file in
         (*history*);;
         (*sessions*);;
@@ -9,20 +7,4 @@ for file in ~/.zsh_*; do
     esac
 done
 
-for file in ~/.bash_*; do
-    case $file in 
-        (*history*);;
-        (*sessions*);;
-        (*profile*);;
-        (*) source $file;;
-    esac
-done
-
-# Go path settings
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# Lua
-export PATH="$HOME/tools/lua-language-server/bin/:$PATH"
-
-alias luamake=/Users/atsushitoda/tools/lua-language-server/3rd/luamake/luamake
+alias config='/usr/bin/git --git-dir=/Users/atsushitoda/.cfg/ --work-tree=/Users/atsushitoda'

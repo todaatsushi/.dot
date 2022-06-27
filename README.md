@@ -15,5 +15,4 @@ Current settings:
 ```
 Neovim
 tmux
-starship
 ```

@@ -1,0 +1,14 @@
+export PATH=/opt/homebrew/bin:$PATH
+
+export MAIN_BRANCH_NAME="main"
+
+# Python
+export PATH="/usr/local/opt/python@3.7/bin:$PATH"
+
+# Go path settings
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH="/Users/atsushitoda/.deta/bin:$PATH"
+
+# Lua
+export PATH="$HOME/tools/lua-language-server/bin/:$PATH"

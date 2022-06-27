@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# Feature branches
+## Feature branches
 branch_off () {
     CURRENT=$(git symbolic-ref --short HEAD)
 
@@ -30,8 +28,8 @@ back_to_feature () {
     done
 
     if [ $TO_STAGING = true ]; then
-        echo "Checking out to main"
-        git checkout main
+        echo "Checking out to $MAIN_BRANCH_NAME"
+        git checkout $MAIN_BRANCH_NAME
     else
         git checkout $CURRENT_FEATURE
     fi
@@ -54,7 +52,7 @@ feature_rebase() {
 # Utils
 freshen_branch() {
     CURRENT=$(git symbolic-ref --short HEAD)
-	git checkout main && git pull && git fetch --all
+	git checkout  && git pull && git fetch --all
 
     if [ -z "$1" ]; then
         git checkout "$CURRENT"
@@ -62,7 +60,7 @@ freshen_branch() {
         git checkout "$1"
     fi
 
-	git rebase -i main
+	git rebase -i $MAIN_BRANCH_NAME
 }
 
 # Shortcuts
@@ -85,7 +83,7 @@ rmb() {
     fi
     echo "Removing branch " "$CURRENT"
 
-	git checkout main && git pull && git fetch --all
+	git checkout $MAIN_BRANCH_NAME && git pull && git fetch --all
 	git branch -D "$CURRENT"
 }
 
