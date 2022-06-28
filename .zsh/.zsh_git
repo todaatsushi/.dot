@@ -184,6 +184,7 @@ new_wt() {
 
     npm i
     export PATH=$(npm bin):$PATH
+    git checkout -- package-lock.json
 
     terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Ready to run server"
 
