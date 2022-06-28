@@ -109,11 +109,8 @@ fx() {
 }
 
 plog () {
-    if [ -z "$1" ]; then
-        git log --pretty=format:"%h%x09%an%x09%s"
-    else
-        git log --pretty=format:"%h%x09%an%x09%s" | grep "$1"
-    fi
+    FORMAT="--pretty=format:\"%C(red)%h %C(green)%x09%an%x09 %m %C(bold blue)%ad %C(yellow)%s\""
+    eval "git log ${FORMAT} ${@}"
 }
 
 change_wt() {
