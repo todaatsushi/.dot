@@ -109,7 +109,7 @@ fx() {
 }
 
 plog () {
-    FORMAT="--pretty=format:\"%C(red)%h %C(green)%x09%an%x09 %m %C(bold blue)%ad %C(yellow)%s\""
+    FORMAT="--pretty=format:\"%C(red)%h %C(green)%x09%an%x09 %C(cyan)%m %C(bold blue)%ad %C(yellow)%s\""
     eval "git log ${FORMAT} ${@}"
 }
 
