@@ -17,4 +17,3 @@ end
 
 -- LSP
 require("atoda.lsp")
-require("atoda.debugui")
