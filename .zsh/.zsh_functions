@@ -24,7 +24,7 @@ newproject() {
     cd $NEW_PROJECT_DIR
 }
 
-pinagrep() {
+find_and_replace() {
     # TODO - Toggle git files
 
     POSITIONAL_ARGS=()
