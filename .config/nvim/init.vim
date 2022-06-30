@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 " Formatting
 Plug 'prettier/vim-prettier'
 Plug 'jiangmiao/auto-pairs'
+Plug 'sbdchd/neoformat'
 
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
