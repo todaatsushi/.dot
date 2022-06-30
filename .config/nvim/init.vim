@@ -62,7 +62,6 @@ Plug 'kvrohit/rasmus.nvim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
-Plug 'dense-analysis/ale'
 Plug 'rhysd/vim-grammarous'
 
 " Python specific

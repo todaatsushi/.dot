@@ -26,15 +26,3 @@ set updatetime=50
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-let b:ale_fixers = {
-      \   'typescript': ['prettier'],
-      \   'typescriptreact': ['prettier'],
-      \}
-
-let g:ale_linters = {
-      \   'typescript': ['eslint'],
-      \   'typescriptreact': ['eslint'],
-      \}
-
-let g:ale_fix_on_save = 1

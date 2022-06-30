@@ -216,13 +216,3 @@ inoremap <leader>noqa # flake8: noqa<esc>o
 inoremap <leader>anno from __future__ import annotations<esc>o
 inoremap <leader>tych from typing import TYPE_CHECKING<esc>o
 inoremap <leader>tyim if TYPE_CHECKING:<esc>o
-
-let b:ale_fixers = {
-      \   'python': ['black', 'isort'],
-      \}
-
-let g:ale_linters = {
-      \   'python': ['flake8', 'pylint'],
-      \}
-
-let g:ale_fix_on_save = 1
