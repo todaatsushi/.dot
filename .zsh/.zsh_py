@@ -25,9 +25,35 @@ nest_packages () {
 }
 
 format() {
-    for file in "$@"; do
+    # `git config blame.ignoreRevsFile .git-blame-ignore-revs`
+    COMMIT=0
+    FILES=()
+
+    while test $# -gt 0; do
+      case "$1" in
+        -c)
+          COMMIT=1
+          shift
+          ;;
+        *)
+          FILES+=("$1")
+          shift
+          ;;
+      esac
+    done
+
+    for file in ${FILES[@]}; do
         echo $file
         isort $file
         black $file
     done
+
+    if [ $COMMIT = 1 ]; then
+        git add -p
+        git commit -m "reformatting"
+        HASH=$(git rev-parse HEAD)
+        BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+        echo "#$BRANCH\n$HASH" >> .git-blame-ignore-revs
+    fi
 }
