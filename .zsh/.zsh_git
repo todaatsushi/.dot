@@ -215,6 +215,18 @@ remove_wt() {
     fi
 }
 
+set_and_pull_upstream() {
+    BRANCH_NAME=$(git symbolic-ref --short HEAD)
+    if [ -z "$1" ]; then
+        ORIGIN="origin"
+    else
+        ORIGIN="$1"
+    fi
+
+    git branch --set-upstream-to="$ORIGIN/$BRANCH_NAME" "$BRANCH_NAME"
+    git pull --rebase
+}
+
 # Aliases
 alias g='git'
 alias b='git branch'
