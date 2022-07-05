@@ -1,3 +1,6 @@
+
+require("atoda.sets")
+
 -- Telescope
 require("atoda.telescope")
 
@@ -17,4 +20,3 @@ end
 
 -- LSP
 require("atoda.lsp")
-require("atoda.sets")
