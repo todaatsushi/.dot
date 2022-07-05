@@ -18,5 +18,8 @@ if pcall(require, 'plenary') then
   end
 end
 
+-- Treesitter
+require('nvim-treesitter.configs').setup({ highlight = { enable = true} })
+
 -- LSP
 require("atoda.lsp")
