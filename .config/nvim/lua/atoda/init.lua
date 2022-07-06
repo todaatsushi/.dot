@@ -1,4 +1,4 @@
-
+require("atoda.mappings")
 require("atoda.sets")
 
 -- Telescope
