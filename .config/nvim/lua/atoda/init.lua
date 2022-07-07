@@ -3,6 +3,7 @@ require("atoda.sets")
 
 -- Telescope
 require("atoda.telescope")
+require("atoda.file_finders")
 
 P = function(v)
   print(vim.inspect(v))

@@ -94,5 +94,4 @@ M.search_nvim_grep = function()
     require('telescope.builtin').live_grep({ cwd = "~/.config/nvim" })
 end
 
-
 return M

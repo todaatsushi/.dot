@@ -1,11 +1,5 @@
 lua require("atoda")
 
-" meta
-" Reference nvim files
-nnoremap <leader>gvl :lua require('atoda.telescope').search_nvim_grep()<CR>
-nnoremap <leader>gvf :lua require('atoda.telescope').search_nvim_files()<CR>
-
-
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Find: ")})<CR>
 nnoremap <leader>pl <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>pw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
