@@ -63,7 +63,6 @@ Plug 'kvrohit/rasmus.nvim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
-Plug 'rhysd/vim-grammarous'
 
 " Python specific
 Plug 'Vimjas/vim-python-pep8-indent'
