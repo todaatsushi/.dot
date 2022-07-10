@@ -51,7 +51,7 @@ tmap("<C-l>", "<C-\\><C-n><C-w>l")
 -- NERDTree
 nmap("<leader>nt", ":NERDTreeToggle<CR>")
 nmap("<leader>nf", ":NERDTreeFind<CR>")
-imap("<leader>ii", "i<space><esc>")
+nmap("<leader>ii", "i<space><esc>")
 
 -- Editing
 vmap("J", ":m '>+1<CR>gv=gv")
