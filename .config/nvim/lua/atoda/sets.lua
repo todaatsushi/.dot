@@ -18,7 +18,7 @@ set.signcolumn = "yes"
 set.hidden = true
 set.swapfile = false
 set.backup = false
-set.undodir = "~/.config/nvim/undodir"
+set.undodir = vim.fn.expand("~").."/.config/nvim/"
 set.undofile = true
 
 -- colours
