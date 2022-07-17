@@ -88,6 +88,9 @@ Plug 'fatih/vim-go'
 " Markdown
 Plug 'godlygeek/tabular'
 
+" Prisma
+Plug 'pantharshit00/vim-prisma'
+
 call plug#end()
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
