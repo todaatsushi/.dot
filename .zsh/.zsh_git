@@ -148,54 +148,64 @@ new_wt() {
 
     EXISTS=$(git show-ref refs/heads/"$TO_CHECKOUT")
     DIR_NAME="$(echo "$TO_CHECKOUT" | tr "/" "__")"
+    CHECKED_OUT=$(git worktree list | grep "$TO_CHECKOUT")
 
-    if ! [ -z "$EXISTS" ]; then
-        echo "Is upstream branch - checking out $TO_CHECKOUT in $DIR_NAME"
+    if [ -z $CHECKED_OUT ]; then
+        if ! [ -z "$EXISTS" ]; then
+            echo "Is upstream branch - checking out $TO_CHECKOUT in $DIR_NAME"
 
-        git worktree add "$DIR_NAME" "$TO_CHECKOUT"
-        cd "$DIR_NAME"
-    else
-        if ! [ -z "$DIR_NAME" ]; then
-            BRANCH_NAME="$1"
-            TO_CHECKOUT="$( cut -d '/' -f 2 <<< "$TO_CHECKOUT" )"
-
-            echo "$DIR_NAME" "$BRANCH_NAME" "$TO_CHECKOUT"
+            git worktree add "$DIR_NAME" "$TO_CHECKOUT"
+            cd "$DIR_NAME"
         else
-            BRANCH_NAME="atoda/$TO_CHECKOUT"
-        fi
-        echo "Checking out new branch $BRANCH_NAME in $TO_CHECKOUT"
+            if ! [ -z "$DIR_NAME" ]; then
+                BRANCH_NAME="$1"
+                TO_CHECKOUT="$( cut -d '/' -f 2 <<< "$TO_CHECKOUT" )"
 
-        git worktree add "$TO_CHECKOUT" -b "$BRANCH_NAME"
-        cd "$TO_CHECKOUT"
+                echo "$DIR_NAME" "$BRANCH_NAME" "$TO_CHECKOUT"
+            else
+                BRANCH_NAME="atoda/$TO_CHECKOUT"
+            fi
+            echo "Checking out new branch $BRANCH_NAME in $TO_CHECKOUT"
+
+            git worktree add "$TO_CHECKOUT" -b "$BRANCH_NAME"
+            cd "$TO_CHECKOUT"
+        fi
+
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install --upgrade pip
+        pip install poetry
+        poetry install
+        pip install pyobjc-core==7.3 pyobjc-framework-Cocoa==7.3 pyobjc-framework-Quartz==7.3 ipdb colored-traceback
+        pip install SnakeViz django-cprofile-middleware
+        pip install pip install django-stubs
+        pre-commit install
+
+        cp ~/Workspace/web2/common/ngrok ./ngrok
+        cp ~/Workspace/web2/common/settings_local.py python/wolfproject/settings_local.py
+
+        npm i
+        export PATH=$(npm bin):$PATH
+        git checkout -- package-lock.json
+
+        terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Ready to run server"
+
+        # TODO - add flag to run server
+        # if [ -z "$2" ]; then
+        #     python manage.py runserver
+        # else
+        #     python manage.py runserver "800$2"
+        # fi
+    else
+        if [ -z $(ls | grep "$DIR_NAME") ]; then
+            DIR_NAME="$(echo "$DIR_NAME" | sed "s/atoda_//")"
+        fi
+        cd $DIR_NAME
+
+        source .venv/bin/activate
     fi
 
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip
-    pip install poetry
-    poetry install
-    pip install pyobjc-core==7.3 pyobjc-framework-Cocoa==7.3 pyobjc-framework-Quartz==7.3 ipdb colored-traceback
-    pip install SnakeViz django-cprofile-middleware
-    pip install pip install django-stubs
-    pre-commit install
-
-    cp ~/Workspace/web2/common/ngrok ./ngrok
-    cp ~/Workspace/web2/common/settings_local.py python/wolfproject/settings_local.py
-
-    npm i
-    export PATH=$(npm bin):$PATH
-    git checkout -- package-lock.json
-
-    terminal-notifier -title "Build for $BRANCH_NAME finished." -message "Ready to run server"
-
-    # TODO - add flag to run server
-    # if [ -z "$2" ]; then
-    #     python manage.py runserver
-    # else
-    #     python manage.py runserver "800$2"
-    # fi
-
-    }
+}
 
 remove_wt() {
     if [ -z "$1" ]; then
