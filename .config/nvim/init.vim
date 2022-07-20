@@ -58,8 +58,6 @@ Plug 'rose-pine/neovim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'kvrohit/substrata.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'phha/zenburn.nvim'
-Plug 'kvrohit/rasmus.nvim'
 
 " Meta
 Plug 'vim-airline/vim-airline'
