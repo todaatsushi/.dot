@@ -33,3 +33,7 @@ packer.startup(function()
     })
    end
 )
+
+vim.diagnostic.config({
+    virtual_text = false,
+})
