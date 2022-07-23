@@ -94,7 +94,3 @@ call plug#end()
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 filetype plugin on
-
-" Neovim config shortcut
-cnoremap %nv ~/.config/nvim/
-nnoremap <leader>SV :so %<CR>

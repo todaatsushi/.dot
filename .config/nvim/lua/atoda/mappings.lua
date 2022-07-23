@@ -82,3 +82,7 @@ vmap(">", ">gv")
 
 -- Move selection to Terminal
 vmap(";", "y:<C-r>\"<C-b>")
+
+-- Nvim shortcuts
+cmap("%nv", "~/.config/nvim/")
+nmap("<leader>SV", ":so %<CR>")
