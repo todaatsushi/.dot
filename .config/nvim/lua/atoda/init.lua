@@ -25,6 +25,3 @@ require('nvim-treesitter.configs').setup({ highlight = { enable = true} })
 -- LSP
 require("atoda.lsp")
 require("atoda.packer")
-
--- ColorScheme
-vim.cmd("colorscheme github_dark")
