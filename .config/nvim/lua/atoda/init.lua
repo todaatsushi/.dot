@@ -25,3 +25,23 @@ require('nvim-treesitter.configs').setup({ highlight = { enable = true} })
 -- LSP
 require("atoda.lsp")
 require("atoda.packer")
+
+-- NERDTree on entry
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = "nerdtree",
+--     callback = function ()
+--       vim.cmd("let b:NERDTreeZoomed = 1 | wincmd |")
+--     end
+-- })
+
+-- vim.api.nvim_create_autocmd("BufNew", {
+--     pattern = "*.*",
+--     callback = function ()
+--         local file_or_folder = vim.v.argv[2]
+--         local is_file = file_or_folder:match ".%a+$"
+
+--         if not is_file then
+--             vim.cmd("NERDTree")
+--         end
+--     end
+-- })
