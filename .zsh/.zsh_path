@@ -3,9 +3,6 @@ export PATH=/usr/local/bin:$PATH
 
 export MAIN_BRANCH_NAME="main"
 
-# Python
-export PATH="/usr/local/opt/python@3.7/bin:$PATH"
-
 # Go path settings
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
