@@ -8,3 +8,4 @@ for file in ~/.zsh/.zsh_*; do
 done
 
 alias config='/usr/bin/git --git-dir=/Users/atsushitoda/.cfg/ --work-tree=/Users/atsushitoda'
+export PATH=/opt/homebrew/bin:$PATH
