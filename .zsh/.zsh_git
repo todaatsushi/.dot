@@ -1,4 +1,7 @@
 ## Feature branches
+
+alias config='/usr/bin/git --git-dir=/Users/atsushitoda/.cfg/ --work-tree=/Users/atsushitoda'
+
 branch_off () {
     CURRENT=$(git symbolic-ref --short HEAD)
 
