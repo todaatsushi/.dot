@@ -10,3 +10,6 @@ export PATH="/Users/atsushitoda/.deta/bin:$PATH"
 
 # Lua
 export PATH="$HOME/tools/lua-language-server/bin/:$PATH"
+
+# Postgres
+export PATH="/Users/atsushitoda/homebrew/opt/postgresql@12/bin:$PATH"
